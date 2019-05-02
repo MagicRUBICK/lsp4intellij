@@ -90,10 +90,10 @@ public class DefaultRequestManager implements RequestManager {
     private TextDocumentSyncOptions textDocumentOptions;
     private WorkspaceService workspaceService;
     private TextDocumentService textDocumentService;
-    private LanguageServerWrapper wrapper;
-    private LanguageServer server;
-    private LanguageClient client;
-    private ServerCapabilities serverCapabilities;
+    public LanguageServerWrapper wrapper;
+    public LanguageServer server;
+    public LanguageClient client;
+    public ServerCapabilities serverCapabilities;
 
     public DefaultRequestManager(LanguageServerWrapper wrapper, LanguageServer server, LanguageClient client,
             ServerCapabilities serverCapabilities) {
@@ -635,7 +635,7 @@ public class DefaultRequestManager implements RequestManager {
         return null;
     }
 
-    private boolean checkStatus() {
+    public boolean checkStatus() {
         return wrapper.getStatus() == ServerStatus.INITIALIZED;
     }
 
